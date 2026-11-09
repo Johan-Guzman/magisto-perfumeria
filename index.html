@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magisto Perfumería — Catálogo de fragancias</title>
+  <meta name="description" content="Catálogo de Magisto Perfumería: fragancias de dama, caballero, unisex, árabes y de nicho. Elige presentación y empaque y envía tu pedido por WhatsApp.">
+  <meta name="theme-color" content="#F6F4F0">
+
+  <!-- Open Graph: completa og:url y usa una URL absoluta en og:image al publicar -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:title" content="Magisto Perfumería — Catálogo de fragancias">
+  <meta property="og:description" content="Elige tu fragancia, presentación y empaque, y pide por WhatsApp.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:url" content="">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#inicio" aria-label="Magisto Perfumería, inicio">
+        Magisto <span class="logo-sub">Perfumería</span>
+      </a>
+
+      <nav class="nav" aria-label="Categorías">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menú</button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#dama">Dama</a></li>
+          <li><a href="#caballero">Caballero</a></li>
+          <li><a href="#unisex">Unisex</a></li>
+          <li><a href="#arabe">Árabe</a></li>
+          <li><a href="#nicho">Nicho</a></li>
+        </ul>
+      </nav>
+
+      <button class="cart-btn" type="button" id="abrir-carrito" aria-label="Ver pedido, 0 productos">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Zm3 0V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span class="cart-label">Pedido</span>
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <p class="eyebrow">Magisto Perfumería</p>
+        <h1 class="hero-title" id="hero-title">Encuentra tu aroma.</h1>
+        <p class="hero-subtitle">Elige tu fragancia, personaliza la presentación y el empaque, y envía tu pedido por WhatsApp.</p>
+        <a class="btn" href="#todas">Explorar fragancias</a>
+
+        <ol class="steps" aria-label="Cómo pedir">
+          <li><span>01</span>Elige tu fragancia</li>
+          <li><span>02</span>Tamaño y empaque</li>
+          <li><span>03</span>Pide por WhatsApp</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="catalog" id="catalogo" aria-labelledby="cat-titulo">
+      <div class="toolbar">
+        <div class="container toolbar-inner">
+          <label class="search">
+            <span class="sr-only">Buscar fragancia por nombre</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+            <input type="search" id="buscar" placeholder="Buscar fragancia o casa…" autocomplete="off">
+          </label>
+
+          <div class="filters" role="group" aria-label="Filtrar por categoría" id="categorias">
+            <!-- Botones generados en js/catalogo.js -->
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="catalog-head">
+          <h2 class="section-title" id="cat-titulo">Todas las fragancias</h2>
+          <p class="catalog-count" id="cat-conteo" aria-live="polite"></p>
+        </div>
+
+        <ul class="grid" id="grid" role="list"></ul>
+
+        <div class="empty" id="sin-resultados" hidden>
+          <p>No encontramos fragancias con esa búsqueda.</p>
+          <button type="button" class="link-btn" id="buscar-todas" hidden>Buscar en todas las categorías</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contacto">
+    <div class="container footer-inner">
+      <div>
+        <p class="logo">Magisto <span class="logo-sub">Perfumería</span></p>
+      </div>
+      <div>
+        <h2 class="footer-title">Contacto</h2>
+        <ul class="footer-list" id="footer-contacto"></ul>
+      </div>
+      <div>
+        <h2 class="footer-title">Síguenos</h2>
+        <ul class="footer-list" id="footer-redes"></ul>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <p>Fragancias de elaboración propia. Los nombres de perfumes y casas reconocidas se usan solo como referencia del perfil olfativo de inspiración; no somos distribuidores ni tenemos afiliación con dichas marcas.</p>
+      <p>© <span id="anio"></span> Magisto Perfumería</p>
+    </div>
+  </footer>
+
+  <!-- FICHA DE PRODUCTO -->
+  <dialog class="product-dialog" id="ficha" aria-labelledby="ficha-nombre">
+    <div class="pd">
+      <button class="pd-close" type="button" data-cerrar aria-label="Cerrar ficha">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      </button>
+      <div class="pd-media" id="ficha-media"></div>
+      <form class="pd-body" id="ficha-form"></form>
+    </div>
+  </dialog>
+
+  <!-- CARRITO -->
+  <dialog class="cart-dialog" id="carrito" aria-labelledby="carrito-titulo">
+    <div class="cart">
+      <div class="cart-head">
+        <h2 class="cart-title" id="carrito-titulo">Tu pedido</h2>
+        <button class="pd-close cart-close" type="button" data-cerrar aria-label="Cerrar pedido">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+      </div>
+      <div class="cart-body" id="carrito-lista"></div>
+      <div class="cart-foot" id="carrito-resumen"></div>
+    </div>
+  </dialog>
+
+  <!-- Barra de pedido fija en móvil -->
+  <button class="cart-bar" type="button" id="barra-pedido" hidden></button>
+
+  <!-- Avisos discretos -->
+  <div class="toast" id="aviso" role="status" aria-live="polite" hidden></div>
+
+  <!-- Orden: configuración → datos → carrito → catálogo -->
+  <script src="js/configuracion.js"></script>
+  <script src="data/fragancias.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
