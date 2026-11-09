@@ -55,15 +55,30 @@
     );
   }
 
+  /* ---------- Visual: foto si existe, si no etiqueta tipográfica ---------- */
+  function etiqueta(f, grande) {
+    const nombre = grande
+      ? `<span class="tile-name">${esc(f.nombre)}</span>`
+      : `<h3 class="tile-name">${esc(f.nombre)}</h3>`;
+    return `<div class="tile${grande ? " tile-lg" : ""} tone-${tono(f)}"${grande ? ` aria-hidden="true"` : ""}>
+        <span class="tile-brand"${grande ? "" : ` aria-hidden="true"`}>Magisto</span>
+        ${nombre}
+        <span class="tile-cat">${esc(f.categorias.join(" · "))}</span>
+      </div>`;
+  }
+
+  function visual(f, grande) {
+    const tile = etiqueta(f, grande);
+    if (!f.imagen) return tile;
+    return `<img class="foto" src="${esc(f.imagen)}" alt="Fragancia ${esc(f.nombre)}" loading="lazy" data-fallback="${esc(tile)}">`;
+  }
+
   /* ---------- Tarjetas ---------- */
   function tarjeta(f) {
     return `<li class="card">
-      <div class="tile tone-${tono(f)}">
-        <span class="tile-brand" aria-hidden="true">Magisto</span>
-        <h3 class="tile-name">${esc(f.nombre)}</h3>
-        <span class="tile-cat">${esc(f.categorias.join(" · "))}</span>
-      </div>
+      <div class="card-media">${visual(f, false)}</div>
       <div class="card-body">
+        ${f.imagen ? `<h3 class="card-name">${esc(f.nombre)}</h3>` : ""}
         ${f.casa ? `<p class="card-house">Inspiración · ${esc(f.casa)}</p>` : `<p class="card-house">Fragancia inspirada</p>`}
         <p class="card-price">${precioDesde(f)}</p>
         <button type="button" class="card-link" data-abrir="${esc(f.id)}" aria-label="Elegir ${esc(f.nombre)}">Elegir</button>
@@ -127,11 +142,7 @@
     disparador = boton;
     const f = actual;
 
-    $("#ficha-media").innerHTML = `<div class="tile tile-lg tone-${tono(f)}" aria-hidden="true">
-        <span class="tile-brand">Magisto</span>
-        <span class="tile-name">${esc(f.nombre)}</span>
-        <span class="tile-cat">${esc(f.categorias.join(" · "))}</span>
-      </div>`;
+    $("#ficha-media").innerHTML = visual(f, true);
 
     $("#ficha-form").innerHTML = `
       <p class="eyebrow">${esc(f.categorias.join(" · "))}</p>

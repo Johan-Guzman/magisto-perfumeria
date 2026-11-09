@@ -38,8 +38,8 @@ window.CONFIG = {
   empaques: [
     { id: "cartier",      nombre: "Cartier",      imagen: "assets/empaques/cartier.jpg",      recargo: null },
     { id: "bala",         nombre: "Bala",         imagen: "assets/empaques/bala.jpg",         recargo: null },
-    { id: "tapa-plana",   nombre: "Tapa Plana",   imagen: "assets/empaques/tapa-plana.jpg",   recargo: null },
-    { id: "palito-largo", nombre: "Palito Largo", imagen: "assets/empaques/palito-largo.jpg", recargo: null },
+    { id: "tapa-plana",   nombre: "Cilindro",   imagen: "assets/empaques/tapa-plana.jpg",   recargo: null },
+    { id: "palito-largo", nombre: "Single", imagen: "assets/empaques/palito-largo.jpg", recargo: null },
     { id: "especial",     nombre: "Especial",     imagen: "assets/empaques/especial.jpg",     recargo: null }
   ],
 

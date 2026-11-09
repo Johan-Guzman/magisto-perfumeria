@@ -460,3 +460,10 @@ body:has(.cart-bar:not([hidden])) .site-footer { padding-bottom: 6rem; }
 }
 .footer-legal p:first-child { max-width: 70ch; }
 @media (min-width: 768px) { .footer-inner { grid-template-columns: 2fr 1.4fr 1fr; } }
+
+/* ---------- Fotos de fragancias ---------- */
+.card-media{aspect-ratio:4/5;background:var(--photo-bg);overflow:hidden}
+.card-media>.tile{height:100%}
+.foto{width:100%;height:100%;object-fit:cover}
+.pd-media>.foto{position:absolute;inset:0;object-fit:contain}
+.card-name{font:500 1.3rem/1.15 var(--font-display)}
